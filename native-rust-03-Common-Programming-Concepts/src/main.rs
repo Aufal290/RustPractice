@@ -9,7 +9,7 @@ fn main() {
 
     edit_edition(&mut my_book_title);
 
-    println!("Setelah revisi:");
+    println!("after adding edition:");
     show_book(&my_book_title);
 }
 

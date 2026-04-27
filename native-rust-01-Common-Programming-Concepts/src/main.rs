@@ -1,42 +1,42 @@
 fn main() {
-    let daftar_harga = [15000, 20000, 50000];
+    let price_list = [15000, 20000, 50000];
 
-    let barang_spesial = ("Keyboard Mechanical", 450000, 0);
+    let special_item = ("Mechanical Keyboard", 450000, 0);
 
-    println!("--- Selamat Datang di sini ---");
+    println!("--- Welcome to the store ---");
 
-    println!("Daftar Harga di Katalog:");
-    for harga in daftar_harga {
-        if harga > 25000
+    println!("Catalog Price List:");
+    for price in price_list {
+        if price > 25000
         {
-            println!("harga mahal");
+            println!("expensive price");
         }
-        println!("Rp {harga}");
+        println!("Rp {price}");
     }
 
-    let (nama, harga, stok) = barang_spesial;
-    println!("\nBarang Spesial: {nama}");
-    println!("Harga: Rp {harga}, Stok: {stok}");
+    let (name, price, stock) = special_item;
+    println!("\nSpecial Item: {name}");
+    println!("Price: Rp {price}, Stock: {stock}");
 
-   if data_boolean(stok)
+   if is_stock_available(stock)
    {
-    println!("Stok tersedia");
+    println!("Stock available");
    }
    else
    {
-    println!("Stok Tidak tersedia");
+    println!("Stock out of stock");
    }
 
-    let harga_diskon = hitung_diskon(harga, 10); 
-    println!("Harga setelah diskon 10%: Rp {harga_diskon}");
+    let discounted_price = calculate_discount(price, 10); 
+    println!("Price after 10% discount: Rp {discounted_price}");
 }
 
-fn hitung_diskon(harga: i32, persen: i32) -> i32 {
+fn calculate_discount(price: i32, percentage: i32) -> i32 {
 
-    harga - (harga * persen / 100)
+    price - (price * percentage / 100)
 }
 
-fn data_boolean(stok: i32) -> bool
+fn is_stock_available(stock: i32) -> bool
 {
-   stok > 0
+   stock > 0
 }
